@@ -1,15 +1,11 @@
-function start() {
-    document.getElementById("enterButton").onclick = function () {
-        playGame()
-    };
-}
+var moveCounter = 0;
 
 function buttonPressed(id) {
     document.getElementById("btn" + id).innerText = "X";
     document.getElementById("btn" + id).setAttribute("value", "x");
     document.getElementById("btn" + id).disabled = true;
+    moveCounter++;
     playGame();
-
 }
 
 function playGame() {
@@ -23,7 +19,17 @@ function playGame() {
         disableAllButtons();
     }
     //make ai move
-    //check if ai has one
+    crazySmartAI(gameBoard);
+    // setting up the new gameBoard
+    gameBoard = setupBoard();
+
+    //checking to see if the Ai has won
+    isGameOver = gameResults(gameBoard, "o");
+    if (isGameOver != "No Winner :(") {
+        document.getElementById("results").innerText = isGameOver;
+        disableAllButtons();
+    }
+
 }
 
 
@@ -50,11 +56,9 @@ function setupBoard() {
                 default:
                     break;
             }
-
             buttonCounter++;
         }
     }
-
     return gameBoardArray;
 }
 
@@ -71,30 +75,20 @@ function gameResults(gameBoard, player) { //BUG: TESTED
 
     if (gameBoard[0][0] === player && gameBoard[1][1] === player && gameBoard[2][2] === player)// \ check
         results = "won";
-    if (gameBoard[2][2] === player && gameBoard[1][1] === player && gameBoard[0][0] === player)// / check
+    if (gameBoard[0][2] === player && gameBoard[1][1] === player && gameBoard[2][0] === player)// / check
         results = "won";
 
     if (results === "No Winner :(") {
-        mainLoop:
             for (var r = 0; r < 3; ++r) {
                 //horizontal check
                     if (gameBoard[r][0] === player && gameBoard[r][1] === player && gameBoard[r][2] === player)
-                    {
                         results = "won";
-                        break mainLoop;
-                    }
                 //vertical check
                     if (gameBoard[0][r] === player && gameBoard[1][r] === player && gameBoard[2][r] === player)
-                    {
                         results = "won";
-                        break mainLoop;
-                    }
                     drawCounter++;
             }
     }
-
-    if (drawCounter == 9)
-        return "Game is a Draw";
 
     if (results === "won") {
         if (player === "x")
@@ -102,28 +96,39 @@ function gameResults(gameBoard, player) { //BUG: TESTED
         else if (player === "o")
             return "AI Wins";
     }
+
+    if(moveCounter === 9)
+      return "Game is a Draw";
     return results;
 }
 
 
-function crazySmartAI(openSpotsArray) //BUG: COMPLETE THIS
+function crazySmartAI(gameBoard) //BUG: TEST
 {
-    var openSpacesArray;
+
+    var freeSpaceCounter = 0;
+    var openSpacesArrayList = [];
     for (var r = 0; r < 3; ++r) {
         for (var c = 0; c < 3; ++c) {
-            if (gameBoard[r][c] === "-") {
-                openSpacesArray.key = r;
-                openSpacesArray[r] = c; //BUG: better data structure. You need to store open positions or something 
+            if (gameBoard[r][c] === "na") {
+                openSpacesArrayList.push(freeSpaceCounter);
             }
+            freeSpaceCounter++;
         }
     }
 
-    var aiMove = Math.floor(Math.random() * openSpacesArray.size);
+    //checking if any moves are left
+    if(openSpacesArrayList.length != 0)
+    {
+      var aiMove = Math.floor(Math.random() * openSpacesArrayList.length);
 
-    //place random move
-
-    document.getElementById("enterButton").disabled = true;
-    document.getElementById("displayOutput").innerHTML = "You Win";
+      //place random move
+      var id = openSpacesArrayList[aiMove];
+      document.getElementById("btn" + id).innerText = "O";
+      document.getElementById("btn" + id).setAttribute("value", "o");
+      document.getElementById("btn" + id).disabled = true;
+      moveCounter++;
+    }
 }
 
 //Use a random generator to determine whether the machine or the human
