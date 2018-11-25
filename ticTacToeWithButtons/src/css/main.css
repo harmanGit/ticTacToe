@@ -3,7 +3,52 @@
  */
 
 html {
-    color: #222;
-    font-size: 1em;
-    line-height: 1.4;
+
+    background-color: #7cc4ff;
+    color: floralwhite;
+    font-family: "Calibri Light";
+    padding-left: 7em;
+    padding-right: 7em;
+    padding-bottom: 7em;
+    padding-top: 7em;
+}
+#ticTacToeBoard{
+    text-align:center;
+}
+
+#btn0{
+    height:100px;
+    width:100px;
+}
+#btn1{
+    height:100px;
+    width:100px;
+}
+#btn2{
+    height:100px;
+    width:100px;
+}
+#btn3{
+    height:100px;
+    width:100px;
+}
+#btn4{
+    height:100px;
+    width:100px;
+}
+#btn5{
+    height:100px;
+    width:100px;
+}
+#btn6{
+    height:100px;
+    width:100px;
+}
+#btn7{
+    height:100px;
+    width:100px;
+}
+#btn8{
+    height:100px;
+    width:100px;
 }
