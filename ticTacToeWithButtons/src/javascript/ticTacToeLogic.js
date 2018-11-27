@@ -1,3 +1,4 @@
+//BUG READ THE DIRECTIONS AGAIN BRO
 var moveCounter = 0;
 
 function buttonPressed(id) {
@@ -9,7 +10,7 @@ function buttonPressed(id) {
 }
 
 function buttonPlayGame() {
-    enableAllButtons();
+    disableAllButtons(false);
 
     //randomly picking who goes first player or AI
     if (Math.floor(Math.random() * 2) + 1 === 1) {
@@ -22,11 +23,30 @@ function buttonPlayGame() {
     document.getElementById("playGame").hidden = true;
 }
 
+function buttonPlayAgain() {
+    location.reload()
+}
+
+function buttonLeaveGame() {
+}//BUG
+
+function disableAllButtons(disable) {
+    for (var i = 0; i < 9; ++i)
+        document.getElementById("btn" + i).disabled = disable;
+}
+
 function playGame() {
     if (!gameResults(getGameBoard(), "x")) {//making a move is user didnt win
         crazySmartAI(getGameBoard());//make ai move
-        gameResults(getGameBoard(), "o")
+        gameResults(getGameBoard(), "o")//checking if AI has won
     }
+}
+
+function playAgain() {
+    document.getElementById("playAgain").disabled = false;
+    document.getElementById("playAgain").hidden = false;
+    document.getElementById("leaveGame").disabled = false;
+    document.getElementById("leaveGame").hidden = false;
 }
 
 function getGameBoard() {
@@ -58,19 +78,7 @@ function getGameBoard() {
     return gameBoardArray;
 }
 
-function disableAllButtons()
-{
-    for (var i = 0; i < 9; ++i)
-        document.getElementById("btn" + i).disabled = true;
-}
-
-function enableAllButtons() {
-    for (var i = 0; i < 9; ++i)
-        document.getElementById("btn" + i).disabled = false;
-}
-
-function gameResults(gameBoard, player) { //BUG: TESTED
-
+function gameResults(gameBoard, player) {
     var results = false;
 
     if (gameBoard[0][0] === player && gameBoard[1][1] === player && gameBoard[2][2] === player)// \ check
@@ -91,27 +99,23 @@ function gameResults(gameBoard, player) { //BUG: TESTED
 
     if (results === true) {
         if (player === "x")
-            gameOver( "Human Wins");
+            gameOver("Human Wins");
         else if (player === "o")
-            gameOver( "AI Wins");
-        return true;//hate this
+            gameOver("AI Wins");
     }
 
-    if(moveCounter === 9)
-        gameOver( "Game is a Draw");
+    if (moveCounter === 9)
+        gameOver("Game is a Draw");
     return results;
 }
 
-function gameOver(player)
-{
+function gameOver(player) {
     document.getElementById("results").innerText = player;
-    disableAllButtons();
+    disableAllButtons(true);
     playAgain();
 }
 
-function crazySmartAI(gameBoard) //BUG: COMPLETE THIS
-{
-
+function crazySmartAI(gameBoard) {
     var freeSpaceCounter = 0;
     var openSpacesArrayList = [];
     for (var r = 0; r < 3; ++r) {
@@ -124,8 +128,7 @@ function crazySmartAI(gameBoard) //BUG: COMPLETE THIS
     }
 
     //checking if any moves are left
-    if(openSpacesArrayList.length != 0)
-    {
+    if (openSpacesArrayList.length != 0) {
         var aiMove = Math.floor(Math.random() * openSpacesArrayList.length);
 
         //place random move
@@ -136,19 +139,3 @@ function crazySmartAI(gameBoard) //BUG: COMPLETE THIS
         moveCounter++;
     }
 }
-
-function buttonPlayAgain(){location.reload()}
-function buttonLeaveGame(){}
-
-function playAgain() {
-    document.getElementById("playAgain").disabled = false;
-    document.getElementById("playAgain").hidden = false;
-    document.getElementById("leaveGame").disabled = false;
-    document.getElementById("leaveGame").hidden = false;
-
-}
-//Use a random generator to determine whether the machine or the human
-//   starts to play the game first. For example, the machine starts to play first
-//   when the number is 0 and the human starts to play when the number is 1.
-
-//BUG READ THE DIRECTIONS AGAIN BRO
