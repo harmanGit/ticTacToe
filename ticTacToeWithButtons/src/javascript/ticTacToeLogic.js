@@ -106,9 +106,8 @@ function gameOver(player)
 {
     document.getElementById("results").innerText = player;
     disableAllButtons();
-    //playAgain();
+    playAgain();
 }
-
 
 function crazySmartAI(gameBoard) //BUG: COMPLETE THIS
 {
@@ -138,12 +137,15 @@ function crazySmartAI(gameBoard) //BUG: COMPLETE THIS
     }
 }
 
+function buttonPlayAgain(){location.reload()}
+function buttonLeaveGame(){}
+
 function playAgain() {
-    if (confirm("Press \"Ok\" to play again, else press \"Cancel!\"")) {
-        location.reload();
-    } else {
-        //redirect to homepage
-    }
+    document.getElementById("playAgain").disabled = false;
+    document.getElementById("playAgain").hidden = false;
+    document.getElementById("leaveGame").disabled = false;
+    document.getElementById("leaveGame").hidden = false;
+
 }
 //Use a random generator to determine whether the machine or the human
 //   starts to play the game first. For example, the machine starts to play first
