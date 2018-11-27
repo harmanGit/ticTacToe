@@ -6,7 +6,6 @@ function buttonPressed(id) {
     document.getElementById("btn" + id).disabled = true;
     moveCounter++;
     playGame();
-<<<<<<< HEAD
 }
 
 function buttonPlayGame() {
@@ -21,8 +20,6 @@ function buttonPlayGame() {
     document.getElementById("playGame").hidden = true;
 
     enableAllButtons();
-=======
->>>>>>> 4ade417eb93747f37d73000ec0b02fedf2c65544
 }
 
 function playGame() {
@@ -34,7 +31,8 @@ function playGame() {
     if (isGameOver != "No Winner :(") {
         document.getElementById("results").innerText = isGameOver;
         disableAllButtons();
-    } else {
+        playAgain();
+    } else{
         //make ai move
         crazySmartAI(gameBoard);
         // setting up the new gameBoard
@@ -45,23 +43,9 @@ function playGame() {
         if (isGameOver != "No Winner :(") {
             document.getElementById("results").innerText = isGameOver;
             disableAllButtons();
+            playAgain();
         }
     }
-<<<<<<< HEAD
-=======
-    //make ai move
-    crazySmartAI(gameBoard);
-    // setting up the new gameBoard
-    gameBoard = setupBoard();
-
-    //checking to see if the Ai has won
-    isGameOver = gameResults(gameBoard, "o");
-    if (isGameOver != "No Winner :(") {
-        document.getElementById("results").innerText = isGameOver;
-        disableAllButtons();
-    }
-
->>>>>>> 4ade417eb93747f37d73000ec0b02fedf2c65544
 }
 
 function setupBoard() {
@@ -93,7 +77,8 @@ function setupBoard() {
     return gameBoardArray;
 }
 
-function disableAllButtons() {
+function disableAllButtons()
+{
     for (var i = 0; i < 9; ++i)
         document.getElementById("btn" + i).disabled = true;
 }
@@ -114,7 +99,6 @@ function gameResults(gameBoard, player) { //BUG: TESTED
         results = "won";
 
     if (results === "No Winner :(") {
-<<<<<<< HEAD
         for (var r = 0; r < 3; ++r) {
             //horizontal check
             if (gameBoard[r][0] === player && gameBoard[r][1] === player && gameBoard[r][2] === player)
@@ -124,17 +108,6 @@ function gameResults(gameBoard, player) { //BUG: TESTED
                 results = "won";
             drawCounter++;
         }
-=======
-            for (var r = 0; r < 3; ++r) {
-                //horizontal check
-                    if (gameBoard[r][0] === player && gameBoard[r][1] === player && gameBoard[r][2] === player)
-                        results = "won";
-                //vertical check
-                    if (gameBoard[0][r] === player && gameBoard[1][r] === player && gameBoard[2][r] === player)
-                        results = "won";
-                    drawCounter++;
-            }
->>>>>>> 4ade417eb93747f37d73000ec0b02fedf2c65544
     }
 
     if (results === "won") {
@@ -144,25 +117,14 @@ function gameResults(gameBoard, player) { //BUG: TESTED
             return "AI Wins";
     }
 
-<<<<<<< HEAD
-    if (moveCounter === 9)
+    if(moveCounter === 9)
         return "Game is a Draw";
     return results;
 }
 
 function crazySmartAI(gameBoard) //BUG: COMPLETE THIS
 {
-=======
-    if(moveCounter === 9)
-      return "Game is a Draw";
-    return results;
-}
 
-
-function crazySmartAI(gameBoard) //BUG: TEST
-{
-
->>>>>>> 4ade417eb93747f37d73000ec0b02fedf2c65544
     var freeSpaceCounter = 0;
     var openSpacesArrayList = [];
     for (var r = 0; r < 3; ++r) {
@@ -175,8 +137,8 @@ function crazySmartAI(gameBoard) //BUG: TEST
     }
 
     //checking if any moves are left
-<<<<<<< HEAD
-    if (openSpacesArrayList.length != 0) {
+    if(openSpacesArrayList.length != 0)
+    {
         var aiMove = Math.floor(Math.random() * openSpacesArrayList.length);
 
         //place random move
@@ -184,7 +146,6 @@ function crazySmartAI(gameBoard) //BUG: TEST
         document.getElementById("btn" + id).innerText = "O";
         document.getElementById("btn" + id).setAttribute("value", "o");
         document.getElementById("btn" + id).disabled = true;
-
         moveCounter++;
     }
 }
@@ -194,21 +155,8 @@ function playAgain() {
         location.reload();
     } else {
         //redirect to homepage
-=======
-    if(openSpacesArrayList.length != 0)
-    {
-      var aiMove = Math.floor(Math.random() * openSpacesArrayList.length);
-
-      //place random move
-      var id = openSpacesArrayList[aiMove];
-      document.getElementById("btn" + id).innerText = "O";
-      document.getElementById("btn" + id).setAttribute("value", "o");
-      document.getElementById("btn" + id).disabled = true;
-      moveCounter++;
->>>>>>> 4ade417eb93747f37d73000ec0b02fedf2c65544
     }
 }
-
 //Use a random generator to determine whether the machine or the human
 //   starts to play the game first. For example, the machine starts to play first
 //   when the number is 0 and the human starts to play when the number is 1.
