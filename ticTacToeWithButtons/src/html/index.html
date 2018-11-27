@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title></title>
     <link href="../css/main.css" rel="stylesheet">
-    <script type="text/javascript" src="../javascript/ticTacToeLogic.js"></script>
+    <script src="../javascript/ticTacToeLogic.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -14,24 +14,50 @@
 
     <div id="results">No Winner :(</div>
 
-    <table>
-        <tr>
-            <th><button id="btn0" type="button" onclick="buttonPressed(0)"> </button></th>
-            <th><button id="btn1" type="button"onclick="buttonPressed(1)"> </button></th>
-            <th><button id="btn2" type="button"onclick="buttonPressed(2)"> </button></th>
-        </tr>
-        <tr>
-            <th><button id="btn3" type="button"onclick="buttonPressed(3)"> </button></th>
-            <th><button id="btn4" type="button"onclick="buttonPressed(4)"> </button></th>
-            <th><button id="btn5" type="button"onclick="buttonPressed(5)"> </button></th>
-        </tr>
+    <center>
+        <table>
+            <tr>
+                <th>
+                    <button disabled="true" id="btn0" onclick="buttonPressed(0)" type="button"></button>
+                </th>
+                <th>
+                    <button disabled="true" id="btn1" onclick="buttonPressed(1)" type="button"></button>
+                </th>
+                <th>
+                    <button disabled="true" id="btn2" onclick="buttonPressed(2)" type="button"></button>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <button disabled="true" id="btn3" onclick="buttonPressed(3)" type="button"></button>
+                </th>
+                <th>
+                    <button disabled="true" id="btn4" onclick="buttonPressed(4)" type="button"></button>
+                </th>
+                <th>
+                    <button disabled="true" id="btn5" onclick="buttonPressed(5)" type="button"></button>
+                </th>
+            </tr>
 
-        <tr>
-            <th><button id="btn6" type="button"onclick="buttonPressed(6)"> </button></th>
-            <th><button id="btn7" type="button"onclick="buttonPressed(7)"> </button></th>
-            <th><button id="btn8" type="button"onclick="buttonPressed(8)"> </button></th>
+            <tr>
+                <th>
+                    <button disabled="true" id="btn6" onclick="buttonPressed(6)" type="button"></button>
+                </th>
+                <th>
+                    <button disabled="true" id="btn7" onclick="buttonPressed(7)" type="button"></button>
+                </th>
+                <th>
+                    <button disabled="true" id="btn8" onclick="buttonPressed(8)" type="button"></button>
+                </th>
+            </tr>
+        </table>
+
+        <th>
+            <button id="playGame" onclick="buttonPlayGame()" type="button">Play Game!</button>
+        </th>
         </tr>
-    </table>
+    </center>
+
 </div>
 
 </body>
