@@ -9,46 +9,27 @@ function buttonPressed(id) {
 }
 
 function buttonPlayGame() {
+    enableAllButtons();
+
     //randomly picking who goes first player or AI
     if (Math.floor(Math.random() * 2) + 1 === 1) {
         document.getElementById("results").innerText = "AI Turn!";
-        crazySmartAI(setupBoard()); //AI move
+        crazySmartAI(getGameBoard()); //AI move
     } else
         document.getElementById("results").innerText = "Your Turn!";
 
     document.getElementById("playGame").disabled = true;
     document.getElementById("playGame").hidden = true;
-
-    enableAllButtons();
 }
 
 function playGame() {
-    //setting up game board
-    var gameBoard = setupBoard();
-    //checking to see if the user has won;
-    var isGameOver = gameResults(gameBoard, "x");
-
-    if (isGameOver != "No Winner :(") {
-        document.getElementById("results").innerText = isGameOver;
-        disableAllButtons();
-        playAgain();
-    } else{
-        //make ai move
-        crazySmartAI(gameBoard);
-        // setting up the new gameBoard
-        gameBoard = setupBoard();
-
-        //checking to see if the Ai has won
-        isGameOver = gameResults(gameBoard, "o");
-        if (isGameOver != "No Winner :(") {
-            document.getElementById("results").innerText = isGameOver;
-            disableAllButtons();
-            playAgain();
-        }
+    if (!gameResults(getGameBoard(), "x")) {//making a move is user didnt win
+        crazySmartAI(getGameBoard());//make ai move
+        gameResults(getGameBoard(), "o")
     }
 }
 
-function setupBoard() {
+function getGameBoard() {
     var gameBoardArray = [
         ["na", "na", "na"],
         ["na", "na", "na"],
@@ -90,37 +71,44 @@ function enableAllButtons() {
 
 function gameResults(gameBoard, player) { //BUG: TESTED
 
-    var results = "No Winner :(";
-    var drawCounter = 0;
+    var results = false;
 
     if (gameBoard[0][0] === player && gameBoard[1][1] === player && gameBoard[2][2] === player)// \ check
-        results = "won";
+        results = true;
     if (gameBoard[0][2] === player && gameBoard[1][1] === player && gameBoard[2][0] === player)// / check
-        results = "won";
+        results = true;
 
-    if (results === "No Winner :(") {
+    if (results === false) {
         for (var r = 0; r < 3; ++r) {
             //horizontal check
             if (gameBoard[r][0] === player && gameBoard[r][1] === player && gameBoard[r][2] === player)
-                results = "won";
+                results = true;
             //vertical check
             if (gameBoard[0][r] === player && gameBoard[1][r] === player && gameBoard[2][r] === player)
-                results = "won";
-            drawCounter++;
+                results = true;
         }
     }
 
-    if (results === "won") {
+    if (results === true) {
         if (player === "x")
-            return "Human Wins";
+            gameOver( "Human Wins");
         else if (player === "o")
-            return "AI Wins";
+            gameOver( "AI Wins");
+        return true;//hate this
     }
 
     if(moveCounter === 9)
-        return "Game is a Draw";
+        gameOver( "Game is a Draw");
     return results;
 }
+
+function gameOver(player)
+{
+    document.getElementById("results").innerText = player;
+    disableAllButtons();
+    //playAgain();
+}
+
 
 function crazySmartAI(gameBoard) //BUG: COMPLETE THIS
 {
