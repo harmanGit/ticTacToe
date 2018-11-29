@@ -45,3 +45,5 @@ css code carefully so that your page is colorful and neat.
 3). Use a random generator to determine whether the machine or the human
 starts to play the game first. For example, the machine starts to play first
 when the number is 0 and the human starts to play when the number is 1.
+
+Space Image CITE:  https://www.reddit.com/user/jjjuniorrr/comments/9ptw4d/space_wallpaper/
