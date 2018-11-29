@@ -5,6 +5,16 @@
     <meta charset="utf-8">
     <title></title>
     <link href="../css/main.css" rel="stylesheet">
+</head>
+
+<body>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link href="../css/main.css" rel="stylesheet">
     <script src="../javascript/ticTacToeLogic.js" type="text/javascript"></script>
 </head>
 
@@ -18,52 +28,53 @@
         <table>
             <tr>
                 <th>
-                    <div id="btn0" onclick="buttonPressed(event)"</div>
-                </th>
-                <th>
-                    <div id="btn1" onclick="buttonPressed(event)"</div>
-                </th>
-                <th>
-                    <div id="btn2" onclick="buttonPressed(event)"</div>
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    <div id="btn3" onclick="buttonPressed(event)"</div>
-                </th>
-                <th>
-                    <div id="btn4" onclick="buttonPressed(event)"</div>
-                </th>
-                <th>
-                    <div id="btn5" onclick="buttonPressed(event)"</div>
-                </th>
-            </tr>
-            <tr>
-                <th>
-                     <div id="btn6" onclick="buttonPressed(event)"</div>
-                </th>
-                <th>
-                     <div id="btn7" onclick="buttonPressed(event)"</div>
-                </th>
-                <th>
-                     <div id="btn8" onclick="buttonPressed(event)"</div>
-                </th>
-            </tr>
-        </table>
+                    <div id="div0" onclick="mousePressed(event)"> (0,0) </div>
+</th>
+<th>
+    <div id="div1" onclick="mousePressed(event)"> (0,1) </div>
+</th>
+<th>
+    <div id="div2" onclick="mousePressed(event)"> (0,2) </div>
+</th>
+</tr>
+<tr>
+    <th>
+        <div id="div3" onclick="mousePressed(event)"> (1,0) </div>
+    </th>
+    <th>
+        <div id="div4" onclick="mousePressed(event)"> (1,1) </div>
+    </th>
+    <th>
+        <div id="div5" onclick="mousePressed(event)"> (1,2) </div>
+    </th>
+</tr>
+<tr>
+    <th>
+        <div id="div6" onclick="mousePressed(event)"> (2,0) </div>
+    </th>
+    <th>
+        <div id="div7" onclick="mousePressed(event)"> (2,1) </div>
+    </th>
+    <th>
+        <div id="div8" onclick="mousePressed(event)"> (2,2) </div>
+    </th>
+</tr>
+</table>
 
-        <th>
-            <button id="playGame" onclick="buttonPlayGame()" type="button">Play Game!</button>
-            <button disabled="true" hidden="true" id="playAgain" onclick="buttonPlayAgain()" type="button">Play
-                Again?!
-            </button>
-            <button disabled="true" hidden="true" id="leaveGame" onclick="buttonLeaveGame()" type="button">Leave!
-            </button>
-        </th>
-        </tr>
-    </center>
+<th>
+    <button id="playGame" onclick="buttonPlayGame()" type="button">Play Game!</button>
+    <button disabled="true" hidden="true" id="playAgain" onclick="buttonPlayAgain()" type="button">Play
+        Again?!
+    </button>
+</th>
+</tr>
+</center>
 
 </div>
 
+</body>
+
+</html>
 </body>
 
 </html>
