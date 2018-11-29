@@ -1,13 +1,45 @@
 html {
-    background-color: #7cc4ff;
+    background-image: url("../img/spaceBackground.jpg");
+    background-color: midnightblue;
     color: floralwhite;
-    font-family: "Calibri Light", serif;
-    padding: 1.5em;
+    font-family: "monospace", serif;
+    padding: 1em;
 }
 
-.gameBtn
-{
+p {
+    padding: .5em;
+    background-color: darkslateblue;
+    opacity: .7;
+    filter: alpha(opacity=70);
+}
+
+#title {
+    font-family: "monospace", serif;
+    font-style: italic;
+    font-size: 90px;
+}
+
+#results {
+    font-size: 35px;
+}
+
+.gameBtn {
     height: 225px;
-    width:225px;
-    font-size: 100px;
+    width: 225px;
+    font-size: 75px;
+    text-align: center;
+    color: floralwhite;
+    background-color: darkslateblue;
+    opacity: .7;
+    filter: alpha(opacity=70);
+}
+
+.nonGameButtons {
+    width: 170px;
+    height: 50px;
+    font: bold 20px monospace;
+    color: floralwhite;
+    background-color: darkslateblue;
+    opacity: .8;
+    filter: alpha(opacity=80);
 }

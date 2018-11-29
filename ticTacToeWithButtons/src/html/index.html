@@ -10,57 +10,68 @@
 
 <body>
 
-<div id="ticTacToeBoard">
+<div>
 
     <center>
 
-        <h1 id="title">Tic-Tac-Toe</h1>
+        <span id="title">Tic-Tac-Toe</span>
 
-        <div id="results">No Winner :(</div> </br>
+        <div hidden="true" id="results">No Winner :(</div>
+        </br>
 
         <table>
             <tr>
                 <th>
-                    <button disabled="true" id="btn0" class="gameBtn" onclick="buttonPressed(0)" type="button">(0,0)</button>
+                    <button class="gameBtn" disabled="true" id="btn0" onclick="buttonPressed(0)" type="button">(0,0)
+                    </button>
                 </th>
                 <th>
-                    <button disabled="true" id="btn1" class="gameBtn" onclick="buttonPressed(1)" type="button">(0,1)</button>
+                    <button class="gameBtn" disabled="true" id="btn1" onclick="buttonPressed(1)" type="button">(0,1)
+                    </button>
                 </th>
                 <th>
-                    <button disabled="true" id="btn2" class="gameBtn" onclick="buttonPressed(2)" type="button">(0,2)</button>
+                    <button class="gameBtn" disabled="true" id="btn2" onclick="buttonPressed(2)" type="button">(0,2)
+                    </button>
                 </th>
             </tr>
             <tr>
                 <th>
-                    <button disabled="true" id="btn3" class="gameBtn" onclick="buttonPressed(3)" type="button">(1,0)</button>
+                    <button class="gameBtn" disabled="true" id="btn3" onclick="buttonPressed(3)" type="button">(1,0)
+                    </button>
                 </th>
                 <th>
-                    <button disabled="true" id="btn4" class="gameBtn" onclick="buttonPressed(4)" type="button">(1,1)</button>
+                    <button class="gameBtn" disabled="true" id="btn4" onclick="buttonPressed(4)" type="button">(1,1)
+                    </button>
                 </th>
                 <th>
-                    <button disabled="true" id="btn5" class="gameBtn" onclick="buttonPressed(5)" type="button">(1,2)</button>
+                    <button class="gameBtn" disabled="true" id="btn5" onclick="buttonPressed(5)" type="button">(1,2)
+                    </button>
                 </th>
             </tr>
 
             <tr>
                 <th>
-                    <button disabled="true" id="btn6" class="gameBtn" onclick="buttonPressed(6)" type="button">(2,0)</button>
+                    <button class="gameBtn" disabled="true" id="btn6" onclick="buttonPressed(6)" type="button">(2,0)
+                    </button>
                 </th>
                 <th>
-                    <button disabled="true" id="btn7" class="gameBtn" onclick="buttonPressed(7)" type="button">(2,1)</button>
+                    <button class="gameBtn" disabled="true" id="btn7" onclick="buttonPressed(7)" type="button">(2,1)
+                    </button>
                 </th>
                 <th>
-                    <button disabled="true" id="btn8" class="gameBtn" onclick="buttonPressed(8)" type="button">(2,2)</button>
+                    <button class="gameBtn" disabled="true" id="btn8" onclick="buttonPressed(8)" type="button">(2,2)
+                    </button>
                 </th>
             </tr>
         </table>
-        <th>
-            <button id="playGame" onclick="buttonPlayGame()" type="button">Play Game!</button>
-            <button disabled="true" hidden="true" id="playAgain" onclick="buttonPlayAgain()" type="button">Play
+        <th> </br>
+            <button class="nonGameButtons" id="playGame" onclick="buttonPlayGame()" type="button">Play Game!</button>
+            <button class="nonGameButtons" disabled="true" hidden="true" id="playAgain" onclick="buttonPlayAgain()"
+                    type="button">Play
                 Again?!
             </button>
         </th>
-        </tr>
+        </tr></br></br>
 
         <p>Directions: Tic-tac-toe is a game where two opponent alternate marking spaces in a 3×3 grid,
             with X's, and O's. The first player who places three of their marks in a row vertical,

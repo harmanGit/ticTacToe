@@ -23,53 +23,59 @@
 <div id="ticTacToeBoard">
 
     <center>
-        <h1 id="title">Tic-Tac-Toe</h1>
+        <span id="title">Tic-Tac-Toe</span>
 
-        <div id="results">No Winner :(</div> </br>
+        <div hidden="true" id="results">No Winner :(</div>
+        </br>
 
         <table>
             <tr>
                 <th>
-                    <div class="gameDiv" id="div0" onclick="mousePressed(event)"> (0,0) </div>
+                    <div class="gameDiv" id="div0" onclick="mousePressed(event)"> (0,0)</div>
+
                 </th>
                 <th>
-                    <div class="gameDiv" id="div1" onclick="mousePressed(event)"> (0,1) </div>
+                    <div class="gameDiv" id="div1" onclick="mousePressed(event)"> (0,1)</div>
+
                 </th>
                 <th>
-                    <div class="gameDiv" id="div2" onclick="mousePressed(event)"> (0,2) </div>
-                </th>
-            </tr>
-            <tr>
-                <th>
-                    <div class="gameDiv" id="div3" onclick="mousePressed(event)"> (1,0) </div>
-                </th>
-                <th>
-                    <div class="gameDiv" id="div4" onclick="mousePressed(event)"> (1,1) </div>
-                </th>
-                <th>
-                    <div class="gameDiv" id="div5" onclick="mousePressed(event)"> (1,2) </div>
+                    <div class="gameDiv" id="div2" onclick="mousePressed(event)"> (0,2)</div>
                 </th>
             </tr>
             <tr>
                 <th>
-                    <div class="gameDiv" id="div6" onclick="mousePressed(event)"> (2,0) </div>
+                    <div class="gameDiv" id="div3" onclick="mousePressed(event)"> (1,0)</div>
+
                 </th>
                 <th>
-                    <div class="gameDiv" id="div7" onclick="mousePressed(event)"> (2,1) </div>
+                    <div class="gameDiv" id="div4" onclick="mousePressed(event)"> (1,1)</div>
+
                 </th>
                 <th>
-                    <div class="gameDiv" id="div8" onclick="mousePressed(event)"> (2,2) </div>
+                    <div class="gameDiv" id="div5" onclick="mousePressed(event)"> (1,2)</div>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <div class="gameDiv" id="div6" onclick="mousePressed(event)"> (2,0)</div>
+                </th>
+                <th>
+                    <div class="gameDiv" id="div7" onclick="mousePressed(event)"> (2,1)</div>
+                </th>
+                <th>
+                    <div class="gameDiv" id="div8" onclick="mousePressed(event)"> (2,2)</div>
                 </th>
             </tr>
         </table>
         </br>
         <th>
-            <button id="playGame" onclick="buttonPlayGame()" type="button">Play Game!</button>
-            <button disabled="true" hidden="true" id="playAgain" onclick="buttonPlayAgain()" type="button">Play
+            <button class="nonGameButtons" id="playGame" onclick="buttonPlayGame()" type="button">Play Game!</button>
+            <button class="nonGameButtons" disabled="true" hidden="true" id="playAgain" onclick="buttonPlayAgain()"
+                    type="button">Play
                 Again?!
             </button>
         </th>
-        </tr>
+        </tr></br></br>
         <p>Directions: Tic-tac-toe is a game where two opponent alternate marking spaces in a 3×3 grid,
             with X's, and O's. The first player who places three of their marks in a row vertical,
             horizontal, or diagonal win the game.</p>
