@@ -25,7 +25,7 @@ function mousePressed(mouseEvent) {
 function buttonPlayGame() {
 
     //randomly picking who goes first player or AI
-    if (Math.floor(Math.random() * 2) === 1) {//check
+    if (Math.floor(Math.random() * 2) + 1 === 1) {//check
         document.getElementById("results").innerText = "AI Turn!";
         crazySmartAI(gameBoardArray); //AI move
     } else
@@ -74,6 +74,7 @@ function crazySmartAI(gameBoard) {
         if (checkValidMove(id, "o")) {
             document.getElementById("div" + id).innerText = "O";
             document.getElementById("div" + id).setAttribute("value", "o");
+            document.getElementById("results").innerText = "Your Turn!";
             moveCounter++;
         }
     }

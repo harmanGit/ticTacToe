@@ -20,7 +20,7 @@ function buttonPlayGame() {
     disableAllButtons(false);
 
     //randomly picking who goes first player or AI
-    if (Math.floor(Math.random() * 2) === 1) {
+    if (Math.floor(Math.random() * 2) + 1 === 1) {
         document.getElementById("results").innerText = "AI Made A Move!";
         crazySmartAI(getGameBoard()); //AI move
     } else
@@ -66,6 +66,7 @@ function crazySmartAI(gameBoard) {
         document.getElementById("btn" + id).innerText = "O";
         document.getElementById("btn" + id).setAttribute("value", "o");
         document.getElementById("btn" + id).disabled = true;
+        document.getElementById("results").innerText = "Your Turn!";
         moveCounter++;
     }
 }

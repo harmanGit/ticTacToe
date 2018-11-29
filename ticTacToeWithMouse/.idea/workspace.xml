@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ae649361-821e-4ae4-840c-f5f436c08be3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../ticTacToeWithButtons/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ticTacToeWithButtons/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ticTacToeWithButtons/src/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/../ticTacToeWithButtons/src/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ticTacToeWithButtons/src/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ticTacToeWithButtons/src/html/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ticTacToeWithButtons/src/javascript/ticTacToeLogic.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ticTacToeWithButtons/src/javascript/ticTacToeLogic.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/html/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/javascript/ticTacToeLogic.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/javascript/ticTacToeLogic.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -26,7 +22,7 @@
         <entry file="file://$PROJECT_DIR$/src/css/main.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="285">
-              <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+              <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -34,7 +30,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/html/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
+            <state relative-caret-position="885">
               <caret line="59" column="81" selection-start-line="59" selection-start-column="81" selection-end-line="59" selection-end-column="81" />
             </state>
           </provider>
@@ -43,30 +39,16 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/javascript/ticTacToeLogic.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="516">
-              <caret line="215" selection-start-line="215" selection-end-line="215" />
+            <state relative-caret-position="375">
+              <caret line="48" column="1" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
               <folding>
                 <element signature="n#!!block;n#mousePressed#0" />
-                <element signature="e#192#571#0" />
-                <element signature="e#362#565#0" />
                 <element signature="n#!!doc;n#buttonPlayGame#0" />
-                <element signature="n#!!block;n#buttonPlayGame#0" />
-                <element signature="e#700#829#0" />
                 <element signature="n#!!doc;n#playGame#0" />
                 <element signature="n#!!block;n#playGame#0" />
-                <element signature="e#2312#2469#0" />
                 <element signature="n#!!doc;n#crazySmartAI#0" />
-                <element signature="n#!!block;n#crazySmartAI#0" />
-                <element signature="e#3066#3271#0" />
-                <element signature="e#3104#3265#0" />
-                <element signature="e#3148#3223#0" />
-                <element signature="e#3351#3728#0" />
-                <element signature="e#3543#3722#0" />
                 <element signature="n#!!doc;n#gameResults#0" />
                 <element signature="n#!!block;n#gameResults#0" />
-                <element signature="e#3999#4386#0" />
-                <element signature="e#4037#4380#0" />
-                <element signature="e#4414#4575#0" />
                 <element signature="n#!!doc;n#gameOver#0" />
                 <element signature="n#!!block;n#gameOver#0" />
                 <element signature="n#!!doc;n#playAgain#0" />
@@ -75,13 +57,10 @@
                 <element signature="n#!!block;n#buttonPlayAgain#0" />
                 <element signature="n#!!doc;n#checkValidMove#0" />
                 <element signature="n#!!block;n#checkValidMove#0" />
-                <element signature="e#6805#6952#0" />
                 <element signature="n#!!doc;n#validCell#0" />
                 <element signature="n#!!block;n#validCell#0" />
-                <element signature="e#5752#6213#0" />
                 <element signature="n#!!doc;n#load#0" />
                 <element signature="n#!!block;n#load#0" />
-                <element signature="e#6888#6978#0" />
                 <element signature="n#!!doc;n#loadGameCells#0" />
                 <element signature="n#!!block;n#loadGameCells#0" />
               </folding>
@@ -107,63 +86,27 @@
       <list>
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/css/main.css" />
-        <option value="$PROJECT_DIR$/src/javascript/ticTacToeLogic.js" />
         <option value="$PROJECT_DIR$/src/html/index.html" />
+        <option value="$PROJECT_DIR$/src/javascript/ticTacToeLogic.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="145" />
-    <option name="y" value="214" />
-    <option name="width" value="1390" />
-    <option name="height" value="786" />
+    <option name="x" value="960" />
+    <option name="y" value="32" />
+    <option name="width" value="960" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="ticTacToeWithMouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ticTacToeWithMouse" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ticTacToeWithMouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ticTacToeWithMouse" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ticTacToeWithMouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ticTacToeWithMouse" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="html" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ticTacToeWithMouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ticTacToeWithMouse" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="img" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ticTacToeWithMouse" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ticTacToeWithMouse" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="javascript" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../ticTacToeWithButtons" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -211,15 +154,16 @@
       <workItem from="1543021946492" duration="129000" />
       <workItem from="1543471595158" duration="1115000" />
       <workItem from="1543500546092" duration="6879000" />
+      <workItem from="1543508460754" duration="109000" />
+      <workItem from="1543508582559" duration="9000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8123000" />
+    <option name="totallyTimeSpent" value="8241000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="145" y="214" width="1390" height="786" extended-state="0" />
-    <editor active="true" />
+    <frame x="960" y="32" width="960" height="1048" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.11608094" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -248,43 +192,29 @@
     <entry file="file://$PROJECT_DIR$/src/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
-          <caret line="19" column="1" lean-forward="true" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/html/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
+        <state relative-caret-position="885">
           <caret line="59" column="81" selection-start-line="59" selection-start-column="81" selection-end-line="59" selection-end-column="81" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/javascript/ticTacToeLogic.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="215" selection-start-line="215" selection-end-line="215" />
+        <state relative-caret-position="375">
+          <caret line="48" column="1" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
           <folding>
             <element signature="n#!!block;n#mousePressed#0" />
-            <element signature="e#192#571#0" />
-            <element signature="e#362#565#0" />
             <element signature="n#!!doc;n#buttonPlayGame#0" />
-            <element signature="n#!!block;n#buttonPlayGame#0" />
-            <element signature="e#700#829#0" />
             <element signature="n#!!doc;n#playGame#0" />
             <element signature="n#!!block;n#playGame#0" />
-            <element signature="e#2312#2469#0" />
             <element signature="n#!!doc;n#crazySmartAI#0" />
-            <element signature="n#!!block;n#crazySmartAI#0" />
-            <element signature="e#3066#3271#0" />
-            <element signature="e#3104#3265#0" />
-            <element signature="e#3148#3223#0" />
-            <element signature="e#3351#3728#0" />
-            <element signature="e#3543#3722#0" />
             <element signature="n#!!doc;n#gameResults#0" />
             <element signature="n#!!block;n#gameResults#0" />
-            <element signature="e#3999#4386#0" />
-            <element signature="e#4037#4380#0" />
-            <element signature="e#4414#4575#0" />
             <element signature="n#!!doc;n#gameOver#0" />
             <element signature="n#!!block;n#gameOver#0" />
             <element signature="n#!!doc;n#playAgain#0" />
@@ -293,13 +223,10 @@
             <element signature="n#!!block;n#buttonPlayAgain#0" />
             <element signature="n#!!doc;n#checkValidMove#0" />
             <element signature="n#!!block;n#checkValidMove#0" />
-            <element signature="e#6805#6952#0" />
             <element signature="n#!!doc;n#validCell#0" />
             <element signature="n#!!block;n#validCell#0" />
-            <element signature="e#5752#6213#0" />
             <element signature="n#!!doc;n#load#0" />
             <element signature="n#!!block;n#load#0" />
-            <element signature="e#6888#6978#0" />
             <element signature="n#!!doc;n#loadGameCells#0" />
             <element signature="n#!!block;n#loadGameCells#0" />
           </folding>
