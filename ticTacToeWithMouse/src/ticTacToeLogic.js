@@ -1,106 +1,78 @@
 //BUG READ THE DIRECTIONS AGAIN BRO
 var moveCounter = 0;
+var divCellArray = new Array(9);
+var gameBoardArray;
+var canPlayGame = false;
 
-function buttonPressed(mouseEvent) {
-    
-	var clientX = mouseEvent.clientX;
-	var clientY = mouseEvent.clientY;
-	
-	//document.getElementById("btn" + id). = 
-	//function() {document.getElementById("btn" + id).innerText = "X";
-    //document.getElementById("btn" + id).setAttribute("value", "x");};
-	
-	console.log("cX: " + clientX + " cY:" + clientY);
-	
-	var element = document.getElementById("btn" + id); 
-	var position = element.getBoundingClientRect(); //great than top less then bottom
-	var topPosition = position.top;
-	var bottomPosition = position.bottom;
-	var leftPosition = position.left;
-	var rightPosition = position.right;
-	
-	console.log("top" + topPosition + " bottom" + bottomPosition + " left" + leftPosition + " right" + rightPosition);
-	
-	validButtonPlacement(clientX,clientY,topPosition,bottomPosition, leftPosition, rightPosition);
-	moveCounter++;
-    //playGame();
+function mousePressed(mouseEvent) {
+
+    if(canPlayGame){
+        var clientX = mouseEvent.clientX;
+        var clientY = mouseEvent.clientY;
+        var id = validCell(clientX, clientY);
+
+        if (checkValidMove(id, "x")) {
+            document.getElementById("div" + id).innerText = "X";
+            document.getElementById("div" + id).setAttribute("value", "x");
+            moveCounter++;
+            playGame();
+        }
+    }
 }
 
 function buttonPlayGame() {
 
     //randomly picking who goes first player or AI
-    if (Math.floor(Math.random() * 2) + 1 === 1) {
+    if (Math.floor(Math.random() * 2) === 1) {//check
         document.getElementById("results").innerText = "AI Turn!";
-        crazySmartAI(getGameBoard()); //AI move
+        crazySmartAI(gameBoardArray); //AI move
     } else
         document.getElementById("results").innerText = "Your Turn!";
 
     document.getElementById("playGame").disabled = true;
     document.getElementById("playGame").hidden = true;
+    canPlayGame = true;
 }
-function validButtonPlacement(clientX,clientY,top,bottom,left,right, id)
-{
-	
-	//X top and 
-	if(clientY > top && clientY < bottom && clientX >right && clientX < left)
-	{
-		console.log("HERE " + id);
-	}
+
+function validCell(clientX, clientY) {
+    //console.log("cX: " + clientX + " cY:" + clientY);
+    for (var i = 0; i < 9; i++) {
+        var myElement = divCellArray[i];
+        var position = myElement.getBoundingClientRect();
+        var topPosition = position.top;
+        var bottomPosition = position.bottom;
+        var leftPosition = position.left;
+        var rightPosition = position.right;
+        if (clientY > topPosition && clientY <= bottomPosition && clientX >= leftPosition && clientX <= rightPosition)
+            return i//console.log("HERE " + i);
+    }
+    return 999;//if value not found for some reason
 }
 
 function buttonPlayAgain() {
     location.reload()
 }
 
-function buttonLeaveGame() {
-}//BUG
-
-function disableAllButtons(disable) {
-    for (var i = 0; i < 9; ++i)
-        document.getElementById("btn" + i).disabled = disable;
-}
-
 function playGame() {
-    if (!gameResults(getGameBoard(), "x")) {//making a move is user didnt win
-        crazySmartAI(getGameBoard());//make ai move
-        gameResults(getGameBoard(), "o")//checking if AI has won
+    if (!gameResults(gameBoardArray, "x")) {//making a move is user didnt win
+        crazySmartAI(gameBoardArray);//make ai move
+        gameResults(gameBoardArray, "o")//checking if AI has won
     }
 }
 
-function playAgain() {
-    //document.getElementById("playAgain").disabled = false;
-    //document.getElementById("playAgain").hidden = false;
-    //document.getElementById("leaveGame").disabled = false;
-    //document.getElementById("leaveGame").hidden = false;
-}
+function load() {
+    loadGameCells();
 
-function getGameBoard() {
-    var gameBoardArray = [
+    gameBoardArray = [
         ["na", "na", "na"],
         ["na", "na", "na"],
         ["na", "na", "na"]
     ];
+}
 
-    var buttonCounter = 0;
-    for (var r = 0; r < 3; ++r) {
-        for (var c = 0; c < 3; ++c) {
-
-            var cellValue = document.getElementById("btn" + buttonCounter).value;
-
-            switch (cellValue) {
-                case "x":
-                    gameBoardArray[r][c] = "x";
-                    break;
-                case "o":
-                    gameBoardArray[r][c] = "o";
-                    break;
-                default:
-                    break;
-            }
-            buttonCounter++;
-        }
-    }
-    return gameBoardArray;
+function loadGameCells() {
+    for (var i = 0; i < 9; ++i)
+        divCellArray[i] = document.getElementById("div" + i);
 }
 
 function gameResults(gameBoard, player) {
@@ -127,17 +99,28 @@ function gameResults(gameBoard, player) {
             gameOver("Human Wins");
         else if (player === "o")
             gameOver("AI Wins");
+        return results;
     }
 
     if (moveCounter === 9)
         gameOver("Game is a Draw");
+
+    console.log(gameBoardArray);
     return results;
 }
 
-function gameOver(player) {
-    document.getElementById("results").innerText = player;
-    disableAllButtons(true);
+function playAgain() {
+    document.getElementById("playAgain").disabled = false;
+    document.getElementById("playAgain").hidden = false;
+
+}
+
+function gameOver(results) {
+    console.log("gameover");
+    document.getElementById("results").innerText = results;
     playAgain();
+    canPlayGame = false;
+
 }
 
 function crazySmartAI(gameBoard) {
@@ -158,9 +141,25 @@ function crazySmartAI(gameBoard) {
 
         //place random move
         var id = openSpacesArrayList[aiMove];
-        document.getElementById("btn" + id).innerText = "O";
-        document.getElementById("btn" + id).setAttribute("value", "o");
-        document.getElementById("btn" + id).disabled = true;
-        moveCounter++;
+
+        if (checkValidMove(id, "o")) {
+            document.getElementById("div" + id).innerText = "O";
+            document.getElementById("div" + id).setAttribute("value", "o");
+            moveCounter++;
+        }
     }
 }
+
+function checkValidMove(id, player) {
+    var indices = document.getElementById("div" + id).innerHTML.valueOf();
+    if (indices != "X" && indices != "O") {
+        var row = indices.charAt(2);
+        var cols = indices.charAt(4);
+        gameBoardArray[row][cols] = player;
+        return true;
+        //console.log(indices + " r" + row + " c"+ cols);
+    }
+    return false;
+}
+
+window.addEventListener("load", load);
