@@ -13,7 +13,7 @@ function buttonPlayGame() {
     disableAllButtons(false);
 
     //randomly picking who goes first player or AI
-    if (Math.floor(Math.random() * 2) + 1 === 1) {
+    if (Math.floor(Math.random() * 2) === 1) {
         document.getElementById("results").innerText = "AI Turn!";
         crazySmartAI(getGameBoard()); //AI move
     } else
@@ -102,7 +102,9 @@ function gameResults(gameBoard, player) {
             gameOver("Human Wins");
         else if (player === "o")
             gameOver("AI Wins");
+        return results;
     }
+    
 
     if (moveCounter === 9)
         gameOver("Game is a Draw");
