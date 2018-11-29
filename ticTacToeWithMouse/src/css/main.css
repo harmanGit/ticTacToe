@@ -1,63 +1,14 @@
-/*
- *
- */
-
 html {
-
     background-color: #7cc4ff;
     color: floralwhite;
-    font-family: "Calibri Light";
-    padding-left: 7em;
-    padding-right: 7em;
-    padding-bottom: 7em;
-    padding-top: 7em;
-}
-#ticTacToeBoard{
-    text-align:center;
+    font-family: "Calibri Light", serif;
+    padding: 1.5em;
 }
 
-#div0{
-    background-color:red;
-    height:100px;
-    width:100px;
-}
-#div1{
-    background-color:red;
-    height:100px;
-    width:100px;
-}
-#div2{
-    background-color:red;
-    height:100px;
-    width:100px;
-}
-#div3{
-    background-color:red;
-    height:100px;
-    width:100px;
-}
-#div4{
-    background-color:red;
-    height:100px;
-    width:100px;
-}
-#div5{
-    background-color:red;
-    height:100px;
-    width:100px;
-}
-#div6{
-    background-color:red;
-    height:100px;
-    width:100px;
-}
-#div7{
-    background-color:red;
-    height:100px;
-    width:100px;
-}
-#div8{
-    background-color:red;
-    height:100px;
-    width:100px;
+.gameDiv{
+    height: 225px;
+    width:225px;
+    font-size: 100px;
+    text-align: center;
+    background-color: aquamarine;
 }

@@ -27,9 +27,6 @@ function buttonPlayAgain() {
     location.reload()
 }
 
-function buttonLeaveGame() {
-}//BUG
-
 function disableAllButtons(disable) {
     for (var i = 0; i < 9; ++i)
         document.getElementById("btn" + i).disabled = disable;
@@ -141,3 +138,10 @@ function crazySmartAI(gameBoard) {
         moveCounter++;
     }
 }
+
+function load(){
+    window.alert("Directions: Tic-tac-toe is a game where two opponent alternate marking spaces in a 3×3 grid," +
+    " with X's, and O's. The first player who places three of their marks in a row vertical," +
+    " horizontal, or diagonal win the game.");}
+
+window.addEventListener("load", load);
